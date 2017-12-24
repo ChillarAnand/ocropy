@@ -224,7 +224,9 @@ def process1(arg):
 
     if not args.quiet:
         print_info(fname+":"+pred)
-    ocrolib.write_text(base+".txt",pred)
+
+    if pred:
+        ocrolib.write_text(base+".txt", pred)
 
     if args.show>0 or args.save is not None:
         plt.ion()
